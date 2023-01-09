@@ -1,0 +1,162 @@
+.cabecalho {
+    background-color: var(--branco);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative; /*esse position é para ajustas a lista do menu quando clicado o cehckbox */
+    padding: 0.5em 0;
+}
+.cabecalho__menu-hamburguer {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    background-image: url(../img/Menu.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+}
+
+.container__item {
+    padding: 0.5em;
+}
+
+.container__botao {
+    display: none;
+}
+.container__botao:checked ~ .lista-menu { /* Aqui é pra quando estiver 'checked' ele vai exibir a classe lista-menu, se não estiver clicado ele deixa no none */
+    display: block;
+}
+
+.container__botao:checked ~ .cabecalho__rotulo > .cabecalho__menu-hamburguer {
+    background-image: url("../img/Menu\ Aberto.svg");
+}
+
+.container__botao:checked ~ .cabecalho__rotulo {
+    background: var(--azul-degrade);
+}
+
+.lista-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    background-color: var(--branco);
+    width: 60vw;
+}
+
+.lista-menu__titulo, .lista-menu__item {
+    padding: 1em;
+}
+
+.lista-menu__titulo {
+    font-weight: 700;
+    color: var(--laranja);
+}
+
+.lista-menu__item {
+    background: var(--azul-degrade);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.titulo__cabecalho,
+.opcoes,
+.container__texto{
+    display: none;
+}
+
+
+@media screen and (min-width: 1240px) {
+    
+    .cabecalho {
+        padding: 0 2em;
+    }
+
+    .cabecalho__menu-hamburguer--transparente {
+        display: none;
+    }
+
+    .titulo__cabecalho {
+        display: block;
+        font-family: var(--fonte-secundaria);
+        font-size: 30px;
+    }
+    
+    .titulo__cabecalho--negrito {
+        font-weight: 700;
+    }
+
+    .opcoes {
+        display: flex;
+    }
+
+    .opcoes__item {
+        padding: 1em 1em;
+        text-transform: uppercase;
+    }
+
+    .opcoes__link {
+        color: var(--preto);
+        text-decoration: none;
+    }
+
+    .container__item--transparente {
+        display: none;
+    }
+
+    .container__item {
+        padding: 0 1.5em;
+    }
+
+    .opcoes__botao {
+        display: none;
+    }
+
+    .opcoes__botao:checked ~ .lista-menu {
+        display: block;
+    }
+
+    .lista-menu {
+        width: auto;
+    }
+
+    .lista-menu__item:hover {
+        background: var(--azul-degrade);
+    }
+    
+    .lista-menu__item:hover > .lista-menu__link {
+        -webkit-text-fill-color: var(--branco);
+        text-decoration: none;
+    }
+
+    .opcoes__botao:checked ~ .opcoes__rotulo>.opcoes__item {
+        background: var(--azul-degrade);
+        color: var(--branco);
+    }
+
+}
+
+@media screen and (min-width: 1728px) {
+
+    .container__link {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: var(--preto);
+    }
+    
+    .opcoes {
+        margin-right: auto;
+        padding-left: 2em;
+    }
+
+    .container__texto{
+        display: block;
+    }
+}

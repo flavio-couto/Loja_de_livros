@@ -1,0 +1,70 @@
+.topicos {
+    background: var(--azul-degrade);
+    text-align: center;
+    padding: 1em 0;
+}
+
+.topicos__titulo {
+    font-weight: 300;
+    color: var(--branco);
+    text-transform: uppercase;
+    margin-bottom: 1em;
+}
+
+.topicos__lista {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+}
+
+.topicos__item {
+    margin: 2em 0.5em;
+}
+.topicos__link{
+    color: var(--branco);
+    padding: 1em;
+    background-color: var(--laranja);
+    font-size: 14px;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.topicos__item:hover {
+    transform: scale(1.2);
+    transition: 0.5s;
+}
+
+.topicos__item:hover > .topicos__link {
+    color: var(--laranja);
+    background-color: var(--branco);
+    transform: scale(1.2);
+}
+
+@media screen and (min-width: 1240px) {
+
+    .topicos__titulo {
+        font-size: 24px;
+    }
+
+    .topicos__lista {
+        width: 70%;
+        margin: 0 auto;
+    }
+
+    .topicos__item {
+        padding: 0.5em 0.5em;
+    }
+
+    .topicos__link {
+        font-size: 24px;
+    }
+}
+
+@media screen and (min-width: 1728px) {
+
+    .topicos {
+        padding: 1em 15vw;
+    }
+
+}
